@@ -3,3 +3,10 @@
 - A database is usually controlled by a database management system (DBMS).
 - So, DBMS is SQL Server, and the language we’ll use is SQL. 
 - SQL is a programming language used by nearly all relational databases to query, manipulate, and define data, and to provide access control. 
+# BASIC
+* Database
+- CREATE DATABASE DATABASE_NAME; --TO CREATE A NEW DATABASE
+- DROP DATABASE DATABASE_NAME; OR DROP SCHEMA DATABASE_NAME --TO DELETE A DATABASE
+- USE DATABASE_NAME; -- TO USE THE DATABASE
+- RENAME DATABASE DATABASE_NAME TO NEW_DATABASENAME; --TO RENAME THE DATABASE NAME
+- SHOW DATABASES; --TO VIEW ALL THE DATABASE
