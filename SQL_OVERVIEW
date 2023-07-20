@@ -3,6 +3,7 @@
 - A database is usually controlled by a database management system (DBMS).
 - So, DBMS is SQL Server, and the language we’ll use is SQL. 
 - SQL is a programming language used by nearly all relational databases to query, manipulate, and define data, and to provide access control. 
+
 # BASIC
 * Database
 - CREATE DATABASE DATABASE_NAME; --TO CREATE A NEW DATABASE
@@ -10,6 +11,7 @@
 - USE DATABASE_NAME; -- TO USE THE DATABASE
 - RENAME DATABASE DATABASE_NAME TO NEW_DATABASENAME; --TO RENAME THE DATABASE NAME
 - SHOW DATABASES; --TO VIEW ALL THE DATABASE
+
 * Table queries
 - CREATE TABLE TABLE_NAME (COLUMN_1NAME DATATYPE,COLUMN_2NAME DATATYPE);
 EX:CREATE TABLE EMPLOYEE(ID INT PRIMARY KEY,NAME VARCHAR(15),JOB_DESC VARCHAR(15),SALARY INT);--To create a table
@@ -20,19 +22,43 @@ EX:ALTER TABLE EMPLOYEE ADD DEPARTMENT VARCHAR(15);--To add a column in a table
 EX:ALTER TABLE EMPLOYEE DROP DEPARTMENT;--To delete a column in a table
 - DESCRIBE TABLE_NAME;
 EX:DESCRIBE EMPLOYEE;-- To view the table structure.
+
 * Inserting data to the table
 - INSERT INTO TABLE_NAME VALUES(VALUES,VALUES),(VALUES,VALUES);
 EX:INSERT INTO EMPLOYEE VALUES(1,'GAYATHRI','DEVELOPER', 100000),(2,'SHRUTHI','SENIOR DEVELOPER',500000);-- To insert values into table.
 - INSERT INTO TABLE_NAME(COLUMN_NAME1,COLUMN_NAME2) VALUES (VALUES,VALUES);
 EX:INSERT INTO EMPLOYEE(ID,NAME) VALUES (3,'VEENA'),(4,'AISHWARYA');-- To insert particular column values.
+
 * select from table
 - SELECT * FROM TABLE_NAME;
 EX:SELECT * FROM EMPLOYEE;--To see all the values in a table
 - SELECT COLUMN_1NAME FROM TABLE_NAME;
 EX:SELECT ID FROM EMPLOYEE; --To view a particular column in a table;
+
 * WHERE CLAUSES AND CONDITION
-- <,>,<>,BETWEEN,NOT,IN,OR,AND,>=,<= 
-< EX: SELECT * FROM EMPLOYEE
-      WHERE SALARY<500000;
-> EX: SELECT * FROM EMPLOYEE
-      WHERE SALARY>100000;
+- <,>,<>,BETWEEN,NOT,IN,OR,AND,>=,<=
+- SELECT*FROM EMPLOYEE WHERE SALARY<500000;--its shows the salary less than 500000
+- SELECT*FROM EMPLOYEE WHERE SALARY>500000;--its shows the salary greater than 500000
+- SELECT*FROM EMPLOYEE WHERE NAME='AISHWARYA';--its shows the name with aishwariya
+- SELECT*FROM EMPLOYEE WHERE SALARY BETWEEN 300000 AND 500000;--its shows the salary between 300000 and 500000
+- SELECT*FROM EMPLOYEE WHERE JOB_DESC IN ('DEVELOPER','HR');--its shows job_desc of developer and hr
+- SELECT*FROM EMPLOYEE WHERE JOB_DESC NOT IN ('DEVELOPER','HR');--its shows all job_desc except developer and hr
+- SELECT*FROM EMPLOYEE WHERE JOB_DESC = 'HR' OR NAME='PADMINI';--its shows if one condition is true
+- SELECT*FROM EMPLOYEE WHERE JOB_DESC = 'MANAGER' AND NAME='PADMINI';--its shows only if both condition is true 
+- SELECT*FROM EMPLOYEE LIMIT 3;--its shows only 3 rows in table
+- SELECT*FROM EMPLOYEE WHERE NAME <> ('GAYATHRI');--its shows everything except name gayathri
+
+* like and wildcards
+- LIKE  is used with WHERE clause for searching a specific pattern in a column. It is used along with the following wild cards
+- % represents zero or more characters
+- - represents exactly one character
+EX:GAYATHRI
+- SELECT*FROM EMPLOYEE WHERE JOB_DESC LIKE ('G%');--ITS SHOWS NAME STARTS WITH G
+- SELECT*FROM EMPLOYEE WHERE JOB_DESC LIKE ('%I');--ITS SHOWS NAME ENDS WITH I
+- SELECT*FROM EMPLOYEE WHERE JOB_DESC LIKE ('%I%');--ITS SHOWS NAME CONTAINS I
+- SELECT*FROM EMPLOYEE WHERE JOB_DESC LIKE ('__Y');--ITS SHOWS THE THIRD LETTER WITH Y
+- SELECT*FROM EMPLOYEE WHERE JOB_DESC LIKE ('G\%');--ITS SHOWS NAME START WITH G.\ IS A ESCAPE SEQUENCE
+
+* update and delete
+
+
