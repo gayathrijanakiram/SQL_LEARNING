@@ -60,5 +60,6 @@ EX:GAYATHRI
 - SELECT*FROM EMPLOYEE WHERE JOB_DESC LIKE ('G\%');--ITS SHOWS NAME START WITH G.\ IS A ESCAPE SEQUENCE
 
 * update and delete
-
-
+- UPDATE EMPLOYEE SET JOB_DESC='MANAGER';
+- DELETE FROM EMPLOYEE;--Delete the entire row values
+- DELETE FROM EMPLOYEE WHERE emp_id = 12;--Delete the entire row values
