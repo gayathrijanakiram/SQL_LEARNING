@@ -63,3 +63,6 @@ EX:GAYATHRI
 - UPDATE EMPLOYEE SET JOB_DESC='MANAGER';
 - DELETE FROM EMPLOYEE;--Delete the entire row values
 - DELETE FROM EMPLOYEE WHERE emp_id = 12;--Delete the entire row values
+
+* distinct 
+- select distinct name from employee;-- shows only distinct values without duplicates
